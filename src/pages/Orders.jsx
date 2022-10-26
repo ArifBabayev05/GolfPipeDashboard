@@ -2,12 +2,20 @@ import { useTable, useSortBy } from "react-table";
 import useColumns from "../data/hooks/useColumns";
 import useRows from "../data/hooks/useRows";
 import "../styles/Table.css";
+import { Modal } from 'react-responsive-modal';
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+
 
 export default function Orders() {
   const columns = useColumns();
   const data = useRows();
   const table = useTable({ columns, data }, useSortBy);
-
+  const [open, setOpen] = useState(false);
+  
+  const navigate = useNavigate();
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
   const {
     getTableProps,
     getTableBodyProps,
@@ -21,7 +29,58 @@ export default function Orders() {
       <div className='flex'>
         <div className='p-2 w-100 bg-white justify-between rounded-3xl dark:bg-secondary-dark-bg' style={{'display':'content','width': '100%'}}>
           <div className='card-header px-5 flex justify-between' style={{'width': '100%'}}>
-            <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block mt-5 fs-1'>Deal Table</h1>
+            <button onClick={onOpenModal} class="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2">
+                          Create Leads
+                        </button>
+                        <Modal open={open} onClose={onCloseModal} center>
+                          <div>
+                            {/* <div className="container-fluid">
+                              <div className="row flex-nowrap">
+                                <div className="col py-7">
+                                  <div class="w-full max-w-xs">
+                                    <h1 className='text-4xl text-center' style={{ 'color': '#EA744B', 'fontWeight': 'bold' }}>Creaete Lead</h1>
+                                    <form enctype="multipart/form-data" method="post" onSubmit={(e) => submit(e)} class="bg-orange shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                      <div class="mb-4">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                          Name
+                                        </label>
+                                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                                      </div>
+                                      <div class="mb-4">
+                                        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                          Mail
+                                        </label>
+                                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="mail" />
+                                      </div>
+                                      <div class="mb-4">
+                                        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                          Tel Number
+                                        </label>
+                                        <input className=" shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="tel" />
+                                      </div>
+                                      <div class="mb-4">
+                                        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                          Lead Source
+                                        </label>
+                                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="leadSource" />
+                                      </div>
+                                      <div class="flex items-center justify-between">
+                                        <button className="bg-orange-300 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded leading-tight bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500 focus:outline-none focus:shadow-outline " type="submit">
+                                          Create
+                                        </button>
+                                      </div>
+                                    </form>
+
+                                  </div>
+
+
+
+
+                                </div>
+                              </div>
+                            </div> */}
+                          </div>
+                        </Modal>
             <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block mt-5 fs-1'>Deal Table</h1>
           </div>
           
