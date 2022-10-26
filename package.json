@@ -26,7 +26,8 @@
     "react-responsive-modal": "^6.2.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "react-table": "^7.8.0"
+    "react-table": "^7.8.0",
+    "react-toastify": "^9.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -4,19 +4,19 @@ export default function useColumns() {
   const columns = useMemo(
     () => [
       {
-        Header: "Marca",
+        Header: "Person",
         accessor: "marca"
       },
       {
-        Header: "Modelo",
+        Header: "Organization",
         accessor: "modelo"
       },
       {
-        Header: "Segmento",
+        Header: "Title",
         accessor: "segmento"
       },
       {
-        Header: "Año",
+        Header: "Value",
         accessor: "anio"
       }
     ],

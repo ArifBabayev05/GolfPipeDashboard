@@ -11,7 +11,7 @@ import { Modal } from 'react-responsive-modal';
 
 const Employees = (props) => {
   const [open, setOpen] = useState(false);
-  
+
   const navigate = useNavigate();
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
