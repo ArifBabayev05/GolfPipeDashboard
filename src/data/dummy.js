@@ -492,16 +492,12 @@ export const links = [
         icon: <AiOutlineCalendar />,
       },
       {
-        name: "kanban",
+        name: "order",
         icon: <BsKanban />,
       },
       {
         name: "editor",
         icon: <FiEdit />,
-      },
-      {
-        name: "color-picker",
-        icon: <BiColorFill />,
       },
     ],
   },

@@ -7,8 +7,8 @@ import {
   Ecommerce,
   Employees,
   EmployeeDetail,
-  Calendar
-  
+  Calendar,
+  Order
 } from "./pages";
 
 
@@ -55,6 +55,8 @@ const App = () => {
                 <Route path="/ecommerce" element={<Ecommerce />} />             
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/calendar" element={<Calendar />} />
+                <Route path="/order" element={<Order />} />
+
 
                 
 
