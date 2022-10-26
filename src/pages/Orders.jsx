@@ -102,15 +102,57 @@ export default function Orders(props) {
             </button>
             <Modal open={open} onClose={onCloseModal} center>
               <div>
-                <div className="container-fluid">
-                  <div className="row flex-nowrap">
-                    <div className="col py-7">
+                <div className="container">
+                  <div className="row ">
+                    <div className=" py-7">
                       <div class="w-full max-w-xs">
-                        <h1 className='text-4xl text-center' style={{ 'color': '#EA744B', 'fontWeight': 'bold' }}>Creaete Lead</h1>
+                        <h1 className='text-4xl text-center' style={{ 'color': '#EA744B', 'fontWeight': 'bold' }}>Add Deal</h1>
                         <form enctype="multipart/form-data" method="post" onSubmit={(e) => submit(e)} class="bg-orange shadow-md rounded px-8 pt-6 pb-8 mb-4">
                           <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                              Name
+                            <i class="fa-solid fa-user"></i> Contact Person
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Organization
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Title
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Value
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Expected Close Date
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Phone
+                            </label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Email
                             </label>
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="name" />
                           </div>
