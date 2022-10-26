@@ -97,8 +97,8 @@ export default function Orders(props) {
       <div className='flex'>
         <div className='p-2 w-100 bg-white justify-between rounded-3xl dark:bg-secondary-dark-bg' style={{ 'display': 'content', 'width': '100%' }}>
           <div className='card-header px-5 flex justify-between' style={{ 'width': '100%' }}>
-            <button onClick={onOpenModal} class="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2">
-              Create Leads
+            <button onClick={onOpenModal} class="text-white bg-[#03a624] hover:bg-[#01801b]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2">
+              + Deal
             </button>
             <Modal open={open} onClose={onCloseModal} center>
               <div>
@@ -132,7 +132,13 @@ export default function Orders(props) {
                 </div>
               </div>
             </Modal>
-            <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block mt-5 fs-1'>Deal Table</h1>
+            <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block fs-1'>Deal Table</h1>
+
+            <div className='flex'>
+              <h1 className='text mx-2 text-center text-gray-600  flex	items-center fs-1'>1000$</h1>
+              <h1 className='text mx-2 text-center text-gray-600  flex	items-center fs-1'>10 Deal</h1>
+
+            </div>
           </div>
 
         </div>
