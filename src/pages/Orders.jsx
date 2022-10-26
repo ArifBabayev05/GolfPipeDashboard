@@ -18,13 +18,21 @@ export default function Orders() {
 
   return (
     <div className="container">
+      <div className='flex'>
+        <div className='p-2 w-100 bg-white justify-between rounded-3xl dark:bg-secondary-dark-bg' style={{'display':'content','width': '100%'}}>
+          <div className='card-header px-5 flex justify-between' style={{'width': '100%'}}>
+            <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block mt-5 fs-1'>Deal Table</h1>
+            <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block mt-5 fs-1'>Deal Table</h1>
+          </div>
+          
+        </div>
+      </div>
       {/* Apply the table props */}
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                // Aplicamos las propiedades de ordenación a cada columna
                 <th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   className={
@@ -35,6 +43,7 @@ export default function Orders() {
                       : ""
                   }
                 >
+
                   {column.render("Header")}
                 </th>
               ))}
@@ -42,25 +51,24 @@ export default function Orders() {
           ))}
         </thead>
         {/* Apply the table body props */}
+
+        {/* TODO: Get and Write Datas from API to here */}
+
         <tbody {...getTableBodyProps()}>
           {
-            // Loop over the table rows
             rows.map((row) => {
-              // Prepare the row for display
               prepareRow(row);
               return (
-                // Apply the row props
                 <tr {...row.getRowProps()}>
                   {
-                    // Loop over the rows cells
                     row.cells.map((cell) => {
-                      // Apply the cell props
                       return (
                         <td {...cell.getCellProps()}>
                           {
-                            // Render the cell contents
                             cell.render("Cell")
+
                           }
+
                         </td>
                       );
                     })
